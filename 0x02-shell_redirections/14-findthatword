@@ -1,2 +1,4 @@
 #!/bin/bash
+
+# Use grep to find the line with "root" in /etc/passwd
 grep '^root:' /etc/passwd
