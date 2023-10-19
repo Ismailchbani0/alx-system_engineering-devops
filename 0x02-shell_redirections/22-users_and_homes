@@ -1,4 +1,2 @@
 #!/bin/bash
-
-# Extract usernames and home directories from /etc/passwd and sort by usernames
-awk -F: '{print $1 ":" $6}' /etc/passwd | sort -t':' -k1,1
+awk -F: '{print $1 ":" $6}' /etc/passwd | sort -t':' -k1,1 | sed 's|:|:|'
