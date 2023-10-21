@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | sort -n | sed 's/^\\././g; s/^\\.\\./../g; s/$/\\/' | paste -sd, - | echo ''
+ls -a | tr '\n' ',' | sed -e 's/^,/./;s/,$/./;s/\ /,/g' | sort | echo ''
