@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | tr '\n' ',' | sed -e 's/^,/./;s/,$/./;s/\ /,/g' | sort | echo ''
+ls -amvp
