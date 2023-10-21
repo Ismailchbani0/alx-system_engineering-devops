@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -1Apv | awk '{ORS = (NR%2 == 0) ? ", " : (NR == 1) ? "" : "\n"; sub(/$/, (NR%2 == 1) ? "/" : ""); print}'
