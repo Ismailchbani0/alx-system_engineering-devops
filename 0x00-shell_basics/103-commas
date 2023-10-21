@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Apv | awk '{if(NR%2) {printf $0 "/, "} else {printf $0 "\n"}} END {if(NR%2) print ""}'
+ls -a | sort -n | sed 's/^\\././g; s/^\\.\\./../g; s/$/\\/' | paste -sd, - | echo ''
