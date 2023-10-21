@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Apv | awk '{ORS = (NR%2 == 0) ? ", " : (NR == 1) ? "" : "\n"; sub(/$/, (NR%2 == 1) ? "/" : ""); print}'
+ls -1Apv | awk '{if(NR%2) {printf $0 "/, ";} else {printf $0 "\n";}} END {if(NR%2) print "";}'
